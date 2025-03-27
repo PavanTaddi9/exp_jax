@@ -6,24 +6,24 @@ from transformers import AutoTokenizer
 from ds1000 import DS1000Dataset, DS1000Problem
 from tqdm.auto import tqdm
 from transformers import HfArgumentParser
-from llm_wrapper import (
+from evalution.llm_wrapper import (
     GenerationConfig,
     ModelContext,
     create_infilling_prompt,
     get_model_context,
 )
-from utils import infer_prompt_template
+from evalution.utils import infer_prompt_template
 from vllm import LLM, SamplingParams
 
 @dataclass
 class Args:
-    dataset_path: str
-    model_key: str
-    model_name_or_path: str
+    dataset_path: str = "/Users/pavankumartaddi/Desktop/exp_jax/evalution/ds1000_jax.jsonl"
+    model_key: str = "google/codegemma-7b"
+    model_name_or_path: str = "google/codegemma-7b"
     mode: Literal["Insertion", "Completion"]
-    output_dir: str
+    output_dir: str = "/Users/pavankumartaddi/Desktop/exp_jax/evalution"
 
-    temperature: float = field(default=0.2)
+    temperature: float = field(default=0.0)
     top_p: float = field(default=0.95)
     max_length: int = field(default=1024)
     n_samples_per_batch: int = field(default=5)
