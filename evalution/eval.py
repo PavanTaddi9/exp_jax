@@ -18,11 +18,11 @@ PROMPT = cast(str, None)
 
 @dataclass
 class Args:
-    dataset_path: str = "/Users/pavankumartaddi/Desktop/exp_jax/evalution/ds1000_jax.jsonl"
+    dataset_path: str = "evalution/ds1000_jax.jsonl"
     model_key: str = "google/codegemma-7b"
     model_name_or_path: str = "google/codegemma-7b"
     mode: Literal["Insertion", "Completion"]
-    output_dir: str = "/Users/pavankumartaddi/Desktop/exp_jax/evalution"
+    output_dir: str = "evalution"
 
     temperature: float = field(default=0.0)
     top_p: float = field(default=0.95)

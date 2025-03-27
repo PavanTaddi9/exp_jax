@@ -112,7 +112,7 @@ class StopOnTokens:
 def create_infilling_prompt(prefix: str, suffix: str) -> str:
     return f"{CODEGEMMA_FIM_PREFIX}{prefix}{CODEGEMMA_FIM_SUFFIX}{suffix}{CODEGEMMA_FIM_MIDDLE}"
 
-def get_codegemma_context() -> ModelContext:
+def get_model_context() -> ModelContext:
     tokenizer = AutoTokenizer.from_pretrained(CODEGEMMA_MODEL_NAME)
     
     tokenization = TokenizationContext(
