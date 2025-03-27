@@ -14,6 +14,7 @@ from evalution.llm_wrapper import (
 )
 from evalution.utils import infer_prompt_template
 from vllm import LLM, SamplingParams
+PROMPT = cast(str, None)
 
 @dataclass
 class Args:
